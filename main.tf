@@ -6,17 +6,18 @@ resource "aws_instance" "instance" {
   tags = {
     Name = var.name
   }
-
 }
 
 
 resource "aws_route53_record" "record" {
-  zone_id = var.zone_id
-  name    = "${var.name}-dev.akhildevops.online"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.instance.private_ip]
+  zone_id  = var.zone_id
+  name     = "${var.name}-dev.akhildevops.online"
+  type     = "A"
+  ttl      = 30
+  records  = [aws_instance.instance.private_ip]
 }
+
+
 
 resource "null_resource" "ansible" {
 
@@ -33,3 +34,4 @@ ansible-playbook -i ${var.name}-dev.akhildevops.online, main.yml -e ansible_user
 EOF
   }
 }
+
