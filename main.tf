@@ -34,4 +34,3 @@ ansible-playbook -i ${var.name}-dev.akhildevops.online, main.yml -e ansible_user
 EOF
   }
 }
-
