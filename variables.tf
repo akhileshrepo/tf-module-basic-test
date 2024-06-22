@@ -1,4 +1,4 @@
 variable "name" {}
 variable "zone_id" {}
 variable "instance_type" {}
-variable "security_groups" {}
+variable "vpc_security_group_ids" {}
